@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clonafusión: clona, fusiona y lucha</title>
+<meta name="description" content="Clonafusión: juego de cartas 3 contra 3 en directo para Android con 36 héroes chibi. Clona profesiones, fusiónalas y lucha en la Arena. Playtest cerrado: apúntate.">
+<meta property="og:title" content="Clonafusión: playtest cerrado">
+<meta property="og:description" content="Cartas 3 contra 3 en directo con 36 héroes chibi que clonas y fusionas. Apúntate al playtest de Android.">
+<link rel="canonical" href="https://clonafusion.com/">
+<meta property="og:url" content="https://clonafusion.com/">
+<meta property="og:site_name" content="Clonafusión">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://clonafusion.com/img/portada.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="Héroes chibi de Clonafusión listos para luchar">
+<meta property="og:video" content="https://www.youtube.com/watch?v=XElbIOIatPk">
+<meta name="twitter:image" content="https://clonafusion.com/img/portada.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"Clonafusión","url":"https://clonafusion.com/","image":"https://clonafusion.com/img/portada.jpg","description":"Juego de cartas 3 contra 3 en directo para Android con 36 héroes chibi que clonas y fusionas.","genre":["Cartas","Estrategia por turnos"],"gamePlatform":"Android","operatingSystem":"Android","applicationCategory":"Game","inLanguage":["es","en"],"author":{"@type":"Organization","name":"TOCOLEX Studio Games","email":"contacto@clonafusion.com"},"trailer":{"@type":"VideoObject","name":"Clonafusión: tráiler","description":"Tráiler anime de Clonafusión","thumbnailUrl":"https://i.ytimg.com/vi/XElbIOIatPk/hqdefault.jpg","uploadDate":"2026-11-20T12:00:00+01:00","embedUrl":"https://www.youtube.com/embed/XElbIOIatPk"},"sameAs":["https://discord.gg/GAE96e7tmc","https://www.youtube.com/@Clonafusi%C3%B3n"]}
+</script>
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#160a2b">
+<link rel="icon" href="img/caras/heroe.webp">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<a class="saltar" href="#principal" data-es="Ir al contenido" data-en="Skip to content">Ir al contenido</a>
+
+<header class="barra">
+	<a class="marca" href="#inicio">Clonafusión</a>
+	<nav aria-label="Secciones">
+		<a href="#cartas" data-es="Cartas" data-en="Cards">Cartas</a>
+		<a href="#clonafusion" data-es="Clonafusión" data-en="Clonefusion">Clonafusión</a>
+		<a href="#personajes" data-es="Personajes" data-en="Heroes">Personajes</a>
+		<a href="#ruta" data-es="Hoja de ruta" data-en="Roadmap">Hoja de ruta</a>
+		<a href="#apuntarse" class="nav-cta" data-es="Solicitar acceso" data-en="Request access">Solicitar acceso</a>
+	</nav>
+	<button class="idioma" id="idioma" aria-label="Cambiar idioma / Change language">EN</button>
+</header>
+
+<main id="principal">
+<section class="portada" id="inicio">
+	<video class="portada-video" src="video/portada.mp4" poster="img/portada.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+	<div class="portada-velo"></div>
+	<div class="portada-texto">
+		<p class="etiqueta"><span class="punto"></span><span id="fase">Playtest cerrado · Apúntate</span></p>
+		<h1 class="titulo">Clonafusión</h1>
+		<p class="lema" data-es="Clona héroes. Fusiónalos. Gana en directo." data-en="Clone heroes. Fuse them. Win live.">Clona héroes. Fusiónalos. Gana en directo.</p>
+		<p class="intro" data-es="Cartas 3 contra 3 para Android: cada pieza de ropa de tus clones es una carta, y al fusionarlos nace un equipo que nadie más tiene."
+			data-en="3v3 cards for Android: every piece of your clones' outfit is a card, and fusing them creates a team nobody else has.">Cartas 3 contra 3 para Android: cada pieza de ropa de tus clones es una carta, y al fusionarlos nace un equipo que nadie más tiene.</p>
+		<div class="botones">
+			<a class="boton oro" href="#apuntarse" data-es="Solicitar acceso al playtest" data-en="Request playtest access">Solicitar acceso al playtest</a>
+			<a class="boton discord" data-enlace="discord" href="#" target="_blank" rel="noopener" data-es="Unirse a Discord" data-en="Join Discord">Unirse a Discord</a>
+		</div>
+		<button class="enlace-video" id="ver-trailer" data-es="▶ Ver el tráiler (0:40)" data-en="▶ Watch the trailer (0:40)">▶ Ver el tráiler (0:40)</button>
+	</div>
+</section>
+
+<section class="seccion" id="cartas">
+	<h2 data-es="Tu ropa es tu mazo" data-en="Your outfit is your deck">Tu ropa es tu mazo</h2>
+	<p class="sub" data-es="Cada clon lleva 4 cartas: las de su cabeza, muñeca, calzado y arma. Toca una carta para ver cómo se juega."
+		data-en="Each clone carries 4 cards: its head, wrist, shoes and weapon. Tap a card to see how it plays.">Cada clon lleva 4 cartas: las de su cabeza, muñeca, calzado y arma. Toca una carta para ver cómo se juega.</p>
+	<div class="inspector">
+		<div class="mazo" id="mazo" role="list"></div>
+		<aside class="detalle" id="detalle" aria-live="polite"></aside>
+	</div>
+</section>
+
+<section class="seccion" id="clonafusion">
+	<div class="columnas invertidas">
+		<figure class="marco"><img src="img/anime/t02_hijo.webp" alt="" loading="lazy"></figure>
+		<div>
+			<h2 data-es="Clonafusión: héroes únicos" data-en="Clonefusion: unique heroes">Clonafusión: héroes únicos</h2>
+			<ol class="pasos">
+				<li><b data-es="Elige dos clones" data-en="Pick two clones">Elige dos clones</b> <span data-es="y mételos en la Clonafusionadora del búnker." data-en="and put them in the bunker's Clonefusioner.">y mételos en la Clonafusionadora del búnker.</span></li>
+				<li><b data-es="Nace un hijo" data-en="A child is born">Nace un hijo</b> <span data-es="con 7 piezas que mezclan las profesiones de sus padres, y con ellas sus cartas." data-en="with 7 pieces mixing its parents' professions, and their cards with them.">con 7 piezas que mezclan las profesiones de sus padres, y con ellas sus cartas.</span></li>
+				<li><b data-es="Rarezas" data-en="Rarities">Rarezas</b> <span data-es="pelo rubio, rojo o violeta y tonos de piel poco comunes que solo salen al fusionar." data-en="blond, red or violet hair and uncommon skin tones that only appear when fusing.">pelo rubio, rojo o violeta y tonos de piel poco comunes que solo salen al fusionar.</span></li>
+				<li><b data-es="Evoluciona" data-en="Evolve">Evoluciona</b> <span data-es="hasta el nivel 70 y elige antes de cada combate la versión de nivel 1 o de nivel 2 de cada carta." data-en="up to level 70 and choose the level 1 or level 2 version of each card before every fight.">hasta el nivel 70 y elige antes de cada combate la versión de nivel 1 o de nivel 2 de cada carta.</span></li>
+			</ol>
+		</div>
+	</div>
+</section>
+
+<section class="seccion" id="personajes">
+	<h2 data-es="36 profesiones, 6 clases" data-en="36 professions, 6 classes">36 profesiones, 6 clases</h2>
+	<p class="sub" data-es="Defensa gana a Distancia, Distancia a Cuerpo a cuerpo y Cuerpo a cuerpo a Defensa." data-en="Defense beats Ranged, Ranged beats Melee and Melee beats Defense.">Defensa gana a Distancia, Distancia a Cuerpo a cuerpo y Cuerpo a cuerpo a Defensa.</p>
+	<div class="sexo" role="group" aria-label="Chicos o chicas">
+		<button class="activo" data-sexo="chico" aria-pressed="true" data-es="Chicos" data-en="Boys">Chicos</button>
+		<button data-sexo="chica" aria-pressed="false" data-es="Chicas" data-en="Girls">Chicas</button>
+	</div>
+	<div id="clases" class="clases"></div>
+</section>
+
+<section class="seccion" id="arena">
+	<div class="columnas">
+		<div>
+			<h2 data-es="La Arena: 3 contra 3 en directo" data-en="The Arena: live 3v3">La Arena: 3 contra 3 en directo</h2>
+			<p data-es="Los dos jugadores eligen cartas a la vez y la ronda se resuelve por velocidad, combos, críticos y el último aliento. Si no hay nadie conectado, luchas contra el equipo de otro jugador de tu nivel."
+				data-en="Both players pick cards at the same time and the round plays out by speed, combos, crits and last stand. If nobody is online, you fight another player's team of your level.">Los dos jugadores eligen cartas a la vez y la ronda se resuelve por velocidad, combos, críticos y el último aliento. Si no hay nadie conectado, luchas contra el equipo de otro jugador de tu nivel.</p>
+			<ul class="premios">
+				<li><img src="img/corona.webp" alt=""><span data-es="Copas y ligas: de Bronce a Campeón" data-en="Trophies and leagues: Bronze to Champion">Copas y ligas: de Bronce a Campeón</span></li>
+				<li><img src="img/energia.webp" alt=""><span data-es="Energía para clonafusionar" data-en="Energy to clonefuse">Energía para clonafusionar</span></li>
+				<li><img src="img/plasma.webp" alt=""><span data-es="Plasma de vida, el recurso más escaso" data-en="Life plasma, the rarest resource">Plasma de vida, el recurso más escaso</span></li>
+			</ul>
+		</div>
+		<figure class="marco"><img src="img/anime/t04_cara.webp" alt="" loading="lazy"></figure>
+	</div>
+</section>
+
+<section class="seccion" id="mundos">
+	<h2 data-es="Modo historia: 6 mundos" data-en="Story mode: 6 worlds">Modo historia: 6 mundos</h2>
+	<p class="sub" data-es="Las máquinas, un virus y una invasión acabaron con la ciudad. Desde el búnker, tira el dado, cruza el tablero y vence a sus jefes para conseguir tus primeros clones."
+		data-en="Machines, a virus and an invasion wiped out the city. From the bunker, roll the dice, cross the board and beat its bosses to earn your first clones.">Las máquinas, un virus y una invasión acabaron con la ciudad. Desde el búnker, tira el dado, cruza el tablero y vence a sus jefes para conseguir tus primeros clones.</p>
+	<div class="rejilla-mundos">
+		<article style="--fondo:url(img/mundos/ruinas.webp)"><img src="img/mundos/emblema_ruinas.webp" alt=""><h3 data-es="Ruinas" data-en="Ruins">Ruinas</h3><p data-es="La rebelión de las máquinas" data-en="The machine uprising">La rebelión de las máquinas</p></article>
+		<article style="--fondo:url(img/mundos/hospital.webp)"><img src="img/mundos/emblema_hospital.webp" alt=""><h3 data-es="Hospital" data-en="Hospital">Hospital</h3><p data-es="Los Contaminados" data-en="The Contaminated">Los Contaminados</p></article>
+		<article style="--fondo:url(img/mundos/invasion.webp)"><img src="img/mundos/emblema_invasion.webp" alt=""><h3 data-es="Zona de invasión" data-en="Invasion zone">Zona de invasión</h3><p data-es="Los Ozari" data-en="The Ozari">Los Ozari</p></article>
+		<article style="--fondo:url(img/mundos/estadio.webp)"><img src="img/mundos/emblema_estadio.webp" alt=""><h3 data-es="Estadio" data-en="Stadium">Estadio</h3><p data-es="Los androides campeones" data-en="The champion androids">Los androides campeones</p></article>
+		<article style="--fondo:url(img/mundos/fundicion.webp)"><img src="img/mundos/emblema_fundicion.webp" alt=""><h3 data-es="Fundición" data-en="Foundry">Fundición</h3><p data-es="La fábrica de la IA" data-en="The AI factory">La fábrica de la IA</p></article>
+		<article style="--fondo:url(img/mundos/feria.webp)"><img src="img/mundos/emblema_feria.webp" alt=""><h3 data-es="Feria Fantasma" data-en="Ghost Fair">Feria Fantasma</h3><p data-es="Los Duplicados" data-en="The Duplicates">Los Duplicados</p></article>
+	</div>
+</section>
+
+<section class="seccion" id="porque">
+	<h2 data-es="Por qué probarlo ahora" data-en="Why play it now">Por qué probarlo ahora</h2>
+	<p class="sub" data-es="Esta versión ya es el juego entero. Lo que nos digas cambia el equilibrio de las cartas y lo que hagamos después."
+		data-en="This build is already the full game. What you tell us changes card balance and what we build next.">Esta versión ya es el juego entero. Lo que nos digas cambia el equilibrio de las cartas y lo que hagamos después.</p>
+	<div class="cifras" id="cifras"></div>
+</section>
+
+<section class="seccion" id="ruta">
+	<h2 data-es="Hoja de ruta" data-en="Roadmap">Hoja de ruta</h2>
+	<ol class="ruta" id="lista-ruta"></ol>
+</section>
+
+<section class="seccion" id="apuntarse">
+	<div class="tarjeta-form">
+		<div class="form-texto">
+			<h2 data-es="Solicita acceso al playtest" data-en="Request playtest access">Solicita acceso al playtest</h2>
+			<p data-es="Te enviaremos la invitación de Google Play al correo que pongas. Son 30 segundos." data-en="We'll send the Google Play invite to the email you enter. It takes 30 seconds.">Te enviaremos la invitación de Google Play al correo que pongas. Son 30 segundos.</p>
+			<img src="img/anime/t13_final.webp" alt="" loading="lazy">
+		</div>
+		<form id="form" novalidate>
+			<label for="f-correo" data-es="Correo de tu cuenta de Google Play" data-en="Your Google Play account email">Correo de tu cuenta de Google Play</label>
+			<input id="f-correo" name="correo" type="email" autocomplete="email" required placeholder="tu@gmail.com">
+			<p class="error" id="e-correo" hidden data-es="Escribe un correo válido." data-en="Enter a valid email.">Escribe un correo válido.</p>
+
+			<label for="f-movil" data-es="Tu móvil Android" data-en="Your Android phone">Tu móvil Android</label>
+			<input id="f-movil" name="movil" type="text" autocomplete="off" required placeholder="Samsung A54, Xiaomi Redmi Note 12…">
+			<p class="error" id="e-movil" hidden data-es="Dinos qué móvil tienes." data-en="Tell us which phone you have.">Dinos qué móvil tienes.</p>
+
+			<fieldset>
+				<legend data-es="¿Juegas a juegos de cartas?" data-en="Do you play card games?">¿Juegas a juegos de cartas?</legend>
+				<div class="opciones">
+					<label><input type="radio" name="experiencia" value="Nunca" checked><span data-es="Nunca" data-en="Never">Nunca</span></label>
+					<label><input type="radio" name="experiencia" value="A veces"><span data-es="A veces" data-en="Sometimes">A veces</span></label>
+					<label><input type="radio" name="experiencia" value="Mucho"><span data-es="Mucho" data-en="A lot">Mucho</span></label>
+				</div>
+			</fieldset>
+
+			<label for="f-pais" data-es="País" data-en="Country">País</label>
+			<input id="f-pais" name="pais" type="text" autocomplete="country-name" placeholder="España, Venezuela, México…">
+
+			<label class="casilla"><input type="checkbox" name="novedades" id="f-novedades" checked><span data-es="Quiero recibir novedades del juego (puedo darme de baja cuando quiera)." data-en="I want to receive game news (I can unsubscribe anytime).">Quiero recibir novedades del juego (puedo darme de baja cuando quiera).</span></label>
+
+			<button class="boton oro enviar" type="submit" id="enviar"><span data-es="Solicitar acceso" data-en="Request access">Solicitar acceso</span></button>
+			<p class="aviso-form" id="aviso-form" hidden></p>
+		</form>
+		<div class="hecho" id="hecho" hidden>
+			<img src="img/capsula.webp" alt="">
+			<h3 data-es="¡Estás dentro de la lista!" data-en="You're on the list!">¡Estás dentro de la lista!</h3>
+			<p data-es="Cuando abramos la siguiente tanda te llegará la invitación de Google Play. Mientras, pásate por el Discord." data-en="When we open the next batch you'll get the Google Play invite. Meanwhile, drop by the Discord.">Cuando abramos la siguiente tanda te llegará la invitación de Google Play. Mientras, pásate por el Discord.</p>
+			<a class="boton discord" data-enlace="discord" href="#" target="_blank" rel="noopener" data-es="Unirse a Discord" data-en="Join Discord">Unirse a Discord</a>
+		</div>
+	</div>
+</section>
+
+<section class="seccion" id="faq">
+	<h2 data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</h2>
+	<div class="faq" id="lista-faq"></div>
+</section>
+</main>
+
+<footer class="pie">
+	<nav class="pie-enlaces">
+		<a data-enlace="discord" href="https://discord.gg/GAE96e7tmc" target="_blank" rel="noopener">Discord</a>
+		<a data-enlace="youtube" href="https://www.youtube.com/@Clonafusi%C3%B3n" target="_blank" rel="noopener">YouTube</a>
+		<a href="#apuntarse" data-es="Playtest" data-en="Playtest">Playtest</a>
+		<a data-enlace="contacto" href="#" data-es="Contacto y prensa" data-en="Contact and press">Contacto y prensa</a>
+		<a href="privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+	</nav>
+	<p>© 2026 TOCOLEX Studio Games. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+</footer>
+
+<div class="modal" id="modal" hidden>
+	<button class="cerrar" id="cerrar" aria-label="Cerrar">✕</button>
+	<video id="video-trailer" controls playsinline preload="none" poster="img/portada.jpg"></video>
+</div>
+
+<script src="datos.js"></script>
+<script src="web.js"></script>
+</body>
+</html>
