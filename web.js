@@ -1,4 +1,4 @@
-// Web de Clonafusión: idioma (ES/EN), inspector de cartas, personajes por clase, cifras, hoja de ruta, preguntas,
+// Web de Clonafusión: idioma (ES/EN), inspector de cartas, personajes por clase, hoja de ruta, preguntas,
 // formulario de testers (a un Google Form) y el vídeo del tráiler. Los datos que se editan están en datos.js.
 
 const CLASES = [
@@ -6,12 +6,12 @@ const CLASES = [
 	{ id: "cuidador", es: ["Cuidadores", "Curan, regeneran y duermen al rival"], en: ["Carers", "Heal, regenerate and put foes to sleep"] },
 	{ id: "deportista", es: ["Deportistas", "Rápidos y con golpes a distancia"], en: ["Athletes", "Fast, with ranged attacks"] },
 	{ id: "mente", es: ["Mentes", "Energía, robar cartas y controlar el turno"], en: ["Minds", "Energy, card draw and turn control"] },
-	{ id: "rudo", es: ["Rudos", "Fuerza bruta, críticos y moral alta"], en: ["Bruisers", "Brute force, crits and high morale"] },
+	{ id: "rudo", es: ["Rudos", "Fuerza bruta, críticos y moral alta"], en: ["Brutes", "Brute force, crits and high morale"] },
 	{ id: "artista", es: ["Artistas", "Trucos, veneno y estados molestos"], en: ["Artists", "Tricks, poison and nasty effects"] },
 ];
 const EN = {
 	obrero: "Builder", bombero: "Firefighter", policia: "Police officer", vigilante: "Guard", guardaespaldas: "Bodyguard",
-	agente_de_transito: "Traffic officer", cartero: "Postman", conserje: "Janitor", rescatista: "Rescuer", salvavidas: "Lifeguard",
+	agente_de_transito: "Traffic officer", cartero: "Mail carrier", conserje: "Janitor", rescatista: "Rescuer", salvavidas: "Lifeguard",
 	medico: "Doctor", jardinero: "Gardener", buzo: "Diver", portero_de_futbol: "Goalkeeper", arbitro: "Referee",
 	jugador_de_futbol_americano: "Football player", futbolista: "Soccer player", ciclista: "Cyclist", astronauta: "Astronaut",
 	cientifico: "Scientist", astronomo: "Astronomer", fotografo: "Photographer", detective: "Detective", piloto_de_avion: "Pilot",
@@ -52,9 +52,20 @@ function ponerIdioma(i) {
 
 // ---------------------------------------------------------------- cartas
 
+// Los estados se guardan en inglés, como en el juego: en español salen traducidos y entre comillas
+const ESTADOS_ES = { "Armor Break": "Sin armadura", "Attack Down": "Ataque −", "Speed Down": "Velocidad −", "Morale Down": "Moral −",
+	"Heal Block": "Sin curas", "Attack Up": "Ataque +", "Speed Up": "Velocidad +", "Morale Up": "Moral +", Stun: "Aturdido", Fear: "Miedo",
+	Sleep: "Dormido", Blind: "Ciego", Freeze: "Congelado", Exposed: "Expuesto", Poison: "Veneno", Bleed: "Sangrado", Immune: "Inmune",
+	Stealth: "Oculto", Regen: "Regenera", Taunt: "Provoca" };
+
 function textoCarta(c, campo) {
 	const extra = (window.CARTAS || {})[c.id] || {};
-	return idioma === "en" && extra[campo] && extra[campo].en ? extra[campo].en : c[campo];
+	if (idioma === "en" && extra[campo] && extra[campo].en) return extra[campo].en;
+	let t = c[campo] || "";
+	if (idioma === "es" && campo.startsWith("efecto")) {
+		for (const [en, es] of Object.entries(ESTADOS_ES)) t = t.replace(new RegExp("\\b" + en + "\\b", "g"), "«" + es + "»");
+	}
+	return t;
 }
 
 function htmlCarta(c, nv2 = false) {
@@ -94,6 +105,12 @@ function pintarDetalle() {
 	document.getElementById("detalle").innerHTML = `
 		<p class="detalle-clase" style="color:var(--${c.clase})">${esc(cl[idioma][0])} · ${c.distancia ? t.distancia : t.cuerpo}</p>
 		<h3>${esc(textoCarta(c, "nombre"))}</h3>
+		<p class="detalle-efecto">${esc(textoCarta(c, "efecto"))}</p>
+		<dl class="stats">
+			<div><dt>${t.energia}</dt><dd>${c.energia}</dd></div>
+			<div><dt>${t.ataque}</dt><dd>${c.ataque}</dd></div>
+			<div><dt>${t.escudo}</dt><dd>${c.escudo}</dd></div>
+		</dl>
 		<dl class="tactica">
 			<div><dt>${t.escala}</dt><dd>${esc(tx(x.escala))}</dd></div>
 			<div><dt>${t.sinergia}</dt><dd>${esc(tx(x.sinergia))}</dd></div>
@@ -112,7 +129,7 @@ function pintarPersonajes() {
 		const caras = personajes.filter((x) => x.clase === c.id).map((p) => {
 			const s = sexo === "chica" && p.chica ? "chica" : "chico";
 			const n = idioma === "en" ? (EN[p.id] || p.nombre) : p.nombre;
-			return `<figure class="cara"><img src="img/caras/${p.id}_${s}.webp" alt="" loading="lazy"><figcaption>${esc(n)}</figcaption></figure>`;
+			return `<figure class="cara"><div class="marco"><img src="img/caras/${p.id}_${s}.webp?v=2" alt="" loading="lazy" style="width:${(p.ancho && p.ancho[s]) || 94}%"></div><figcaption>${esc(n)}</figcaption></figure>`;
 		}).join("");
 		return `<div class="clase" style="--color:var(--${c.id})"><h3>${nombre}</h3><p class="rol">${rol}</p><div class="caras">${caras}</div></div>`;
 	}).join("");
@@ -122,10 +139,6 @@ function pintarPersonajes() {
 
 function pintarListas() {
 	const t = T[idioma];
-	document.getElementById("cifras").innerHTML = (window.PORQUE || []).map((p) => {
-		const [titulo, texto] = p[idioma];
-		return `<div class="cifra"><span class="numero">${esc(p.n)}</span><b>${esc(titulo)}</b><p>${esc(texto)}</p></div>`;
-	}).join("");
 	document.getElementById("lista-ruta").innerHTML = (window.RUTA || []).map((r) => {
 		const [titulo, texto] = r[idioma];
 		return `<li class="r-${r.estado}"><span class="estado">${t[r.estado]}</span><b>${esc(titulo)}</b><p>${esc(texto)}</p></li>`;
@@ -212,17 +225,36 @@ function trailer() {
 	const modal = document.getElementById("modal");
 	const video = document.getElementById("video-trailer");
 	const cerrar = () => { video.pause(); modal.hidden = true; document.getElementById("ver-trailer").focus(); };
-	document.getElementById("ver-trailer").addEventListener("click", () => {
+	const abrir = () => {
 		const src = "video/trailer_" + idioma + ".mp4";
 		if (!video.src.endsWith(src)) video.src = src;
 		modal.hidden = false;
 		video.currentTime = 0;
 		video.play().catch(() => {});
 		document.getElementById("cerrar").focus();
-	});
+	};
+	document.getElementById("ver-trailer").addEventListener("click", abrir);
+	document.getElementById("ver-trailer-2").addEventListener("click", abrir);
 	document.getElementById("cerrar").addEventListener("click", cerrar);
 	modal.addEventListener("click", (e) => { if (e.target === modal) cerrar(); });
 	document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) cerrar(); });
+}
+
+// ---------------------------------------------------------------- barra sólida al bajar y aparición suave de las secciones
+
+function animaciones() {
+	const barra = document.getElementById("barra");
+	const fijar = () => barra.classList.toggle("solida", window.scrollY > 40);
+	window.addEventListener("scroll", fijar, { passive: true });
+	fijar();
+	if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+	const ver = new IntersectionObserver((es) => es.forEach((e) => {
+		if (e.isIntersecting) { e.target.classList.add("visto"); ver.unobserve(e.target); }
+	}), { rootMargin: "0px 0px -8% 0px" });
+	document.querySelectorAll(".bloque .cabecera, .rasgo, .rejilla-mundos article, .inspector, .clases, .ruta, .apuntarse > *, .galeria").forEach((el, k) => {
+		el.classList.add("aparece");
+		ver.observe(el);
+	});
 }
 
 // ---------------------------------------------------------------- arranque
@@ -242,6 +274,7 @@ Promise.all([
 	fetch("cartas.json").then((r) => r.json()).catch(() => []),
 ]).then(([p, c]) => { personajes = p; cartas = c; pintarPersonajes(); pintarCartas(); });
 enlaces();
+animaciones();
 formulario();
 trailer();
 ponerIdioma(leer("idioma", (navigator.language || "es").startsWith("es") ? "es" : "en"));

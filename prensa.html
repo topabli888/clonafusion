@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prensa · Clonafusión</title>
+<meta name="description" content="Kit de prensa de Clonafusión: ficha técnica, descripción, tráiler, capturas, logotipo e icono para descargar.">
+<link rel="canonical" href="https://clonafusion.com/prensa">
+<link rel="icon" href="img/caras/heroe.webp">
+<link rel="preload" href="fuentes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="estilo.css">
+<style>
+	.prensa-cab { padding: 140px 0 72px; background: linear-gradient(0deg, var(--fondo) 0%, rgba(13, 10, 21, 0.7) 60%, rgba(13, 10, 21, 0.85) 100%), url(img/anime/t13_final.webp) center 30% / cover; }
+	.prensa-cab img { width: min(520px, 90%); margin: 0 0 22px -6px; }
+	.prensa-cab p { color: #d4cde2; font-size: 18px; max-width: 620px; }
+	.prensa-cab .botones { margin-top: 28px; }
+	.ficha-rejilla { display: grid; grid-template-columns: 340px 1fr; gap: 72px; align-items: start; }
+	.ficha { margin: 0; position: sticky; top: 100px; }
+	.ficha div { padding: 14px 0; border-bottom: 1px solid var(--linea); }
+	.ficha div:first-child { border-top: 1px solid var(--linea); }
+	.ficha dt { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tenue); }
+	.ficha dd { margin: 4px 0 0; color: var(--texto); }
+	.ficha a { color: var(--oro); }
+	.texto-prensa h2 { font-size: clamp(28px, 3vw, 38px); margin: 0 0 18px; }
+	.texto-prensa h2:not(:first-child) { margin-top: 56px; }
+	.texto-prensa p, .texto-prensa li { color: var(--suave); }
+	.texto-prensa li { margin-bottom: 10px; }
+	.texto-prensa li b { color: var(--texto); font-weight: 600; }
+	.video-prensa { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 0 0 1px var(--linea); }
+	.video-prensa video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+	.descargas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+	.descargas a { display: block; text-decoration: none; color: var(--suave); font-size: 14px; }
+	.descargas img { border-radius: 10px; aspect-ratio: 16 / 9; object-fit: cover; margin-bottom: 10px; box-shadow: 0 0 0 1px var(--linea); transition: transform 0.2s; }
+	.descargas a:hover img { transform: translateY(-3px); }
+	.descargas .contener img { object-fit: contain; background: var(--fondo-3); padding: 18px; }
+	@media (max-width: 960px) {
+		.ficha-rejilla { grid-template-columns: 1fr; gap: 48px; }
+		.ficha { position: static; }
+		.descargas { grid-template-columns: 1fr 1fr; }
+	}
+	@media (max-width: 560px) { .descargas { grid-template-columns: 1fr; } .prensa-cab { padding: 110px 0 56px; } }
+</style>
+</head>
+<body>
+<header class="barra solida">
+	<div class="barra-dentro">
+		<a class="marca" href="./"><img src="img/caras/heroe.webp" alt="" width="34" height="34"><span>Clonafusión</span></a>
+		<nav aria-label="Secciones">
+			<a href="#ficha" data-es="Ficha" data-en="Fact sheet">Ficha</a>
+			<a href="#video" data-es="Tráiler" data-en="Trailer">Tráiler</a>
+			<a href="#imagenes" data-es="Imágenes" data-en="Images">Imágenes</a>
+			<a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+		</nav>
+		<button class="idioma" id="idioma" aria-label="Cambiar idioma / Change language">EN</button>
+	</div>
+</header>
+
+<main>
+<section class="prensa-cab">
+	<div class="envoltura">
+		<p class="antetitulo" data-es="Kit de prensa" data-en="Press kit">Kit de prensa</p>
+		<h1><img src="prensa/logo.webp" alt="Clonafusión" width="900" height="186"></h1>
+		<p data-es="Juego de cartas 3 contra 3 en directo para Android, con 36 héroes chibi que se clonan y se fusionan. Todo lo que necesitas para escribir sobre él o grabarlo está en esta página."
+			data-en="A live 3v3 card game for Android with 36 chibi heroes you clone and fuse. Everything you need to write about it or make a video is on this page.">Juego de cartas 3 contra 3 en directo para Android, con 36 héroes chibi que se clonan y se fusionan. Todo lo que necesitas para escribir sobre él o grabarlo está en esta página.</p>
+		<div class="botones">
+			<a class="boton oro" href="prensa/clonafusion_prensa.zip" download>
+				<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				<span data-es="Descargar todo (ZIP, 5 MB)" data-en="Download everything (ZIP, 5 MB)">Descargar todo (ZIP, 5 MB)</span>
+			</a>
+			<a class="boton fantasma" href="mailto:contacto@clonafusion.com?subject=Prensa%20Clonafusi%C3%B3n" data-es="Escribir al estudio" data-en="Contact the studio">Escribir al estudio</a>
+		</div>
+	</div>
+</section>
+
+<section class="bloque" id="ficha">
+	<div class="envoltura ficha-rejilla">
+		<dl class="ficha">
+			<div><dt data-es="Estudio" data-en="Developer">Estudio</dt><dd>TOCOLEX Studio Games</dd></div>
+			<div><dt data-es="País" data-en="Country">País</dt><dd data-es="España" data-en="Spain">España</dd></div>
+			<div><dt data-es="Plataforma" data-en="Platform">Plataforma</dt><dd>Android 7+</dd></div>
+			<div><dt data-es="Estado" data-en="Status">Estado</dt><dd data-es="Playtest cerrado (alfa) desde noviembre de 2026" data-en="Closed playtest (alpha) since November 2026">Playtest cerrado (alfa) desde noviembre de 2026</dd></div>
+			<div><dt data-es="Lanzamiento" data-en="Release">Lanzamiento</dt><dd data-es="Google Play, fecha por anunciar" data-en="Google Play, date to be announced">Google Play, fecha por anunciar</dd></div>
+			<div><dt data-es="Precio" data-en="Price">Precio</dt><dd data-es="Gratis para jugar" data-en="Free to play">Gratis para jugar</dd></div>
+			<div><dt data-es="Idiomas" data-en="Languages">Idiomas</dt><dd data-es="Español (inglés en preparación)" data-en="Spanish (English in progress)">Español (inglés en preparación)</dd></div>
+			<div><dt data-es="Género" data-en="Genre">Género</dt><dd data-es="Cartas, estrategia por turnos, PvP" data-en="Card game, turn-based strategy, PvP">Cartas, estrategia por turnos, PvP</dd></div>
+			<div><dt data-es="Web" data-en="Website">Web</dt><dd><a href="https://clonafusion.com">clonafusion.com</a></dd></div>
+			<div><dt>Discord · YouTube</dt><dd><a href="https://discord.gg/GAE96e7tmc">discord.gg/GAE96e7tmc</a><br><a href="https://www.youtube.com/@Clonafusi%C3%B3n">@Clonafusión</a></dd></div>
+			<div id="contacto"><dt data-es="Prensa" data-en="Press">Prensa</dt><dd><a href="mailto:contacto@clonafusion.com">contacto@clonafusion.com</a></dd></div>
+		</dl>
+
+		<div class="texto-prensa">
+			<h2 data-es="Descripción" data-en="Description">Descripción</h2>
+			<p data-es="Las máquinas se rebelaron, un virus vació la ciudad y una invasión llegó del cielo. Bajo tierra, en un búnker, los supervivientes tienen una última carta: la Clonafusionadora, una máquina que clona a personas de 36 profesiones y las fusiona en héroes nuevos."
+				data-en="The machines rebelled, a virus emptied the city and an invasion came from the sky. Underground, in a bunker, the survivors have one last card to play: the Clonefuser, a machine that clones people from 36 professions and fuses them into new heroes.">Las máquinas se rebelaron, un virus vació la ciudad y una invasión llegó del cielo. Bajo tierra, en un búnker, los supervivientes tienen una última carta: la Clonafusionadora, una máquina que clona a personas de 36 profesiones y las fusiona en héroes nuevos.</p>
+			<p data-es="Clonafusión es un juego de cartas 3 contra 3 en el que la ropa de cada personaje es su mazo: el casco, los guantes, el calzado y el arma son cuatro cartas. Al fusionar dos clones, el hijo hereda piezas de los dos padres, así que cada jugador acaba con un equipo distinto."
+				data-en="Clonafusión is a 3v3 card game where each hero's outfit is their deck: the helmet, gloves, shoes and weapon are four cards. When two clones are fused, the child inherits pieces from both parents, so every player ends up with a different team.">Clonafusión es un juego de cartas 3 contra 3 en el que la ropa de cada personaje es su mazo: el casco, los guantes, el calzado y el arma son cuatro cartas. Al fusionar dos clones, el hijo hereda piezas de los dos padres, así que cada jugador acaba con un equipo distinto.</p>
+
+			<h2 data-es="Características" data-en="Features">Características</h2>
+			<ul>
+				<li><b data-es="36 profesiones y 144 cartas ilustradas" data-en="36 professions and 144 illustrated cards">36 profesiones y 144 cartas ilustradas</b> <span data-es="— de bombero a mariachi, cada una en versión chico y chica." data-en="— from firefighter to mariachi, each as a boy and a girl.">— de bombero a mariachi, cada una en versión chico y chica.</span></li>
+				<li><b data-es="Clonafusión" data-en="Clonefusion">Clonafusión</b> <span data-es="— mezcla dos clones y nace un héroe con piezas y cartas de los dos." data-en="— mix two clones and a hero is born with pieces and cards from both.">— mezcla dos clones y nace un héroe con piezas y cartas de los dos.</span></li>
+				<li><b data-es="Arena 3 contra 3 en directo" data-en="Live 3v3 Arena">Arena 3 contra 3 en directo</b> <span data-es="— los dos jugadores eligen a la vez; ranking de Bronce a Campeón." data-en="— both players choose at the same time; ranking from Bronze to Champion.">— los dos jugadores eligen a la vez; ranking de Bronce a Campeón.</span></li>
+				<li><b data-es="Modo historia con 6 mundos" data-en="Story mode with 6 worlds">Modo historia con 6 mundos</b> <span data-es="— tablero con dados, habilidades, minijefes y jefes finales." data-en="— dice board, skills, minibosses and final bosses.">— tablero con dados, habilidades, minijefes y jefes finales.</span></li>
+				<li><b data-es="Mascotas robóticas, pase de temporada y mejoras de equipo" data-en="Robot pets, season pass and gear upgrades">Mascotas robóticas, pase de temporada y mejoras de equipo</b></li>
+				<li><b data-es="Sin NFT ni criptomonedas" data-en="No NFTs, no crypto">Sin NFT ni criptomonedas</b></li>
+			</ul>
+
+			<h2 id="video" data-es="Tráiler" data-en="Trailer">Tráiler</h2>
+			<figure class="video-prensa"><video controls playsinline preload="none" poster="img/anime/t05_choque.webp" src="video/trailer_es.mp4" id="video-prensa"></video></figure>
+			<p style="margin-top:14px"><span data-es="También en YouTube:" data-en="Also on YouTube:">También en YouTube:</span> <a href="https://www.youtube.com/watch?v=XElbIOIatPk" style="color:var(--oro)">youtube.com/watch?v=XElbIOIatPk</a></p>
+		</div>
+	</div>
+</section>
+
+<section class="bloque bloque-claro" id="imagenes">
+	<div class="envoltura">
+		<header class="cabecera">
+			<p class="antetitulo" data-es="Imágenes" data-en="Images">Imágenes</p>
+			<h2 data-es="Capturas, logotipo e icono" data-en="Screenshots, logo and icon">Capturas, logotipo e icono</h2>
+			<p class="sub" data-es="Puedes usarlas libremente para hablar del juego. Todas vienen en alta calidad en el ZIP." data-en="Feel free to use them to cover the game. They all come in high quality in the ZIP.">Puedes usarlas libremente para hablar del juego. Todas vienen en alta calidad en el ZIP.</p>
+		</header>
+		<div class="descargas">
+			<a href="img/capturas/arena.webp" target="_blank"><img src="img/capturas/arena.webp" alt="" loading="lazy"><span data-es="Arena 3 contra 3" data-en="3v3 Arena">Arena 3 contra 3</span></a>
+			<a href="img/capturas/clonafusionadora.webp" target="_blank"><img src="img/capturas/clonafusionadora.webp" alt="" loading="lazy"><span data-es="La Clonafusionadora" data-en="The Clonefuser">La Clonafusionadora</span></a>
+			<a href="img/capturas/base.webp" target="_blank"><img src="img/capturas/base.webp" alt="" loading="lazy"><span data-es="El búnker" data-en="The bunker">El búnker</span></a>
+			<a href="img/capturas/coleccion.webp" target="_blank"><img src="img/capturas/coleccion.webp" alt="" loading="lazy"><span data-es="Colección de cartas" data-en="Card collection">Colección de cartas</span></a>
+			<a href="img/capturas/viaje.webp" target="_blank"><img src="img/capturas/viaje.webp" alt="" loading="lazy"><span data-es="Modo historia" data-en="Story mode">Modo historia</span></a>
+			<a href="img/capturas/habilidades.webp" target="_blank"><img src="img/capturas/habilidades.webp" alt="" loading="lazy"><span data-es="Habilidades del viaje" data-en="Journey skills">Habilidades del viaje</span></a>
+			<a href="img/anime/t13_final.webp" target="_blank"><img src="img/anime/t13_final.webp" alt="" loading="lazy"><span data-es="Arte clave (tráiler)" data-en="Key art (trailer)">Arte clave (tráiler)</span></a>
+			<a class="contener" href="prensa/clonafusion_logo.png" download><img src="prensa/logo.webp" alt="" loading="lazy"><span data-es="Logotipo (PNG transparente)" data-en="Logo (transparent PNG)">Logotipo (PNG transparente)</span></a>
+			<a class="contener" href="img/caras/heroe.webp" target="_blank"><img src="img/caras/heroe.webp" alt="" loading="lazy"><span data-es="Icono del juego" data-en="Game icon">Icono del juego</span></a>
+		</div>
+	</div>
+</section>
+</main>
+
+<footer class="pie">
+	<div class="envoltura pie-final" style="margin-top:0;border-top:0;padding-top:0">
+		<p>© 2026 TOCOLEX Studio Games. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+		<p><a href="./" style="color:var(--suave)">clonafusion.com</a> · <a href="privacidad.html" style="color:var(--suave)" data-es="Privacidad" data-en="Privacy">Privacidad</a></p>
+	</div>
+</footer>
+
+<script>
+	// (mismo idioma que la portada: se guarda en localStorage)
+	(function () {
+		var leer = function () { try { return localStorage.getItem("idioma"); } catch (e) { return null; } };
+		var poner = function (i) {
+			document.documentElement.lang = i;
+			document.querySelectorAll("[data-es]").forEach(function (el) { el.textContent = el.dataset[i]; });
+			document.getElementById("idioma").textContent = i === "es" ? "EN" : "ES";
+			var v = document.getElementById("video-prensa");
+			if (v && v.paused) v.src = "video/trailer_" + i + ".mp4";
+			try { localStorage.setItem("idioma", i); } catch (e) {}
+		};
+		var actual = leer() || ((navigator.language || "es").indexOf("es") === 0 ? "es" : "en");
+		document.getElementById("idioma").addEventListener("click", function () { actual = actual === "es" ? "en" : "es"; poner(actual); });
+		poner(actual);
+	})();
+</script>
+</body>
+</html>

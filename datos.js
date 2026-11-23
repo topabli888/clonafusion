@@ -18,7 +18,7 @@ window.FORMULARIO = {
 };
 
 // Fase del playtest (la etiqueta de arriba y la hoja de ruta)
-window.FASE = { es: "Playtest cerrado · Apúntate", en: "Closed playtest · Sign up" };
+window.FASE = { es: "Playtest cerrado · Android", en: "Closed playtest · Android" };
 
 // Cartas del inspector: lo táctico de cada una (los números y el efecto vienen del juego: cartas.json)
 window.CARTAS = {

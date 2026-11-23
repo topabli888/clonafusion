@@ -10,17 +10,21 @@
 <link rel="icon" href="img/caras/heroe.webp">
 <link rel="stylesheet" href="estilo.css">
 <style>
-	.legal { max-width: 760px; margin: 0 auto; padding: 48px 16px 80px; line-height: 1.6; }
-	.legal h1 { font-size: clamp(32px, 6vw, 48px); margin: 0 0 6px; color: #ffe66e; }
-	.legal h2 { font-size: 26px; margin: 34px 0 8px; }
-	.legal a { color: #82ffc8; }
-	.legal .fecha { opacity: 0.75; margin-bottom: 28px; }
-	.legal hr { border: 0; border-top: 1px solid rgba(255, 255, 255, 0.15); margin: 48px 0; }
+	.legal { max-width: 760px; margin: 0 auto; padding: 56px 24px 96px; line-height: 1.7; color: var(--suave); }
+	.legal h1 { font-family: "Clonafusion Display", "Lilita One", sans-serif; font-size: clamp(36px, 6vw, 52px); line-height: 1.05; margin: 28px 0 10px; color: #fff; }
+	.legal h2 { font-family: "Inter", system-ui, sans-serif; font-size: 20px; font-weight: 700; margin: 40px 0 10px; color: var(--texto); }
+	.legal strong { color: var(--texto); }
+	.legal a { color: var(--oro); }
+	.legal .volver { font-size: 14px; color: var(--suave); text-decoration: none; }
+	.legal .volver:hover { color: var(--texto); }
+	.legal .fecha { color: var(--tenue); font-size: 14px; margin-bottom: 32px; }
+	.legal hr { border: 0; border-top: 1px solid var(--linea); margin: 64px 0; }
+	.legal li { margin-bottom: 6px; }
 </style>
 </head>
 <body>
 <main class="legal">
-	<p><a href="./">← Clonafusión</a></p>
+	<p><a class="volver" href="./">← Clonafusión</a></p>
 
 	<h1>Política de privacidad</h1>
 	<p class="fecha">Última actualización: 20 de noviembre de 2026</p>

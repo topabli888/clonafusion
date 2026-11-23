@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clonafusión: clona, fusiona y lucha</title>
+<title>Clonafusión · Juego de cartas 3v3 para Android</title>
 <meta name="description" content="Clonafusión: juego de cartas 3 contra 3 en directo para Android con 36 héroes chibi. Clona profesiones, fusiónalas y lucha en la Arena. Playtest cerrado: apúntate.">
-<meta property="og:title" content="Clonafusión: playtest cerrado">
+<meta property="og:title" content="Clonafusión · Juego de cartas 3v3 para Android">
 <meta property="og:description" content="Cartas 3 contra 3 en directo con 36 héroes chibi que clonas y fusionas. Apúntate al playtest de Android.">
 <link rel="canonical" href="https://clonafusion.com/">
 <meta property="og:url" content="https://clonafusion.com/">
@@ -23,185 +23,286 @@
 </script>
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#160a2b">
+<meta name="theme-color" content="#0d0a15">
 <link rel="icon" href="img/caras/heroe.webp">
+<link rel="preload" href="fuentes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 <a class="saltar" href="#principal" data-es="Ir al contenido" data-en="Skip to content">Ir al contenido</a>
 
-<header class="barra">
-	<a class="marca" href="#inicio">Clonafusión</a>
-	<nav aria-label="Secciones">
-		<a href="#cartas" data-es="Cartas" data-en="Cards">Cartas</a>
-		<a href="#clonafusion" data-es="Clonafusión" data-en="Clonefusion">Clonafusión</a>
-		<a href="#personajes" data-es="Personajes" data-en="Heroes">Personajes</a>
-		<a href="#ruta" data-es="Hoja de ruta" data-en="Roadmap">Hoja de ruta</a>
-		<a href="#apuntarse" class="nav-cta" data-es="Solicitar acceso" data-en="Request access">Solicitar acceso</a>
-	</nav>
-	<button class="idioma" id="idioma" aria-label="Cambiar idioma / Change language">EN</button>
+<header class="barra" id="barra">
+	<div class="barra-dentro">
+		<a class="marca" href="#inicio" aria-label="Clonafusión"><img src="img/caras/heroe.webp" alt="" width="34" height="34"><span>Clonafusión</span></a>
+		<nav aria-label="Secciones">
+			<a href="#juego" data-es="El juego" data-en="The game">El juego</a>
+			<a href="#cartas" data-es="Cartas" data-en="Cards">Cartas</a>
+			<a href="#personajes" data-es="Personajes" data-en="Heroes">Personajes</a>
+			<a href="#mundos" data-es="Mundos" data-en="Worlds">Mundos</a>
+			<a href="#ruta" data-es="Hoja de ruta" data-en="Roadmap">Hoja de ruta</a>
+		</nav>
+		<button class="idioma" id="idioma" aria-label="Cambiar idioma / Change language">EN</button>
+		<a href="#apuntarse" class="boton boton-sm oro" data-es="Playtest" data-en="Playtest">Playtest</a>
+	</div>
 </header>
 
 <main id="principal">
 <section class="portada" id="inicio">
 	<video class="portada-video" src="video/portada.mp4" poster="img/portada.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
 	<div class="portada-velo"></div>
-	<div class="portada-texto">
-		<p class="etiqueta"><span class="punto"></span><span id="fase">Playtest cerrado · Apúntate</span></p>
-		<h1 class="titulo">Clonafusión</h1>
+	<div class="portada-texto envoltura">
+		<p class="antetitulo" id="fase">Playtest cerrado · Android</p>
+		<h1 class="titulo"><img src="prensa/logo.webp" alt="Clonafusión" width="900" height="186"></h1>
 		<p class="lema" data-es="Clona héroes. Fusiónalos. Gana en directo." data-en="Clone heroes. Fuse them. Win live.">Clona héroes. Fusiónalos. Gana en directo.</p>
-		<p class="intro" data-es="Cartas 3 contra 3 para Android: cada pieza de ropa de tus clones es una carta, y al fusionarlos nace un equipo que nadie más tiene."
-			data-en="3v3 cards for Android: every piece of your clones' outfit is a card, and fusing them creates a team nobody else has.">Cartas 3 contra 3 para Android: cada pieza de ropa de tus clones es una carta, y al fusionarlos nace un equipo que nadie más tiene.</p>
+		<p class="intro" data-es="Un juego de cartas 3 contra 3 en el que la ropa de tus personajes es tu mazo. Mezcla dos clones y nace un héroe que nadie más tiene."
+			data-en="A 3v3 card game where your heroes' outfits are your deck. Mix two clones and a hero nobody else has is born.">Un juego de cartas 3 contra 3 en el que la ropa de tus personajes es tu mazo. Mezcla dos clones y nace un héroe que nadie más tiene.</p>
 		<div class="botones">
-			<a class="boton oro" href="#apuntarse" data-es="Solicitar acceso al playtest" data-en="Request playtest access">Solicitar acceso al playtest</a>
-			<a class="boton discord" data-enlace="discord" href="#" target="_blank" rel="noopener" data-es="Unirse a Discord" data-en="Join Discord">Unirse a Discord</a>
-		</div>
-		<button class="enlace-video" id="ver-trailer" data-es="▶ Ver el tráiler (0:40)" data-en="▶ Watch the trailer (0:40)">▶ Ver el tráiler (0:40)</button>
-	</div>
-</section>
-
-<section class="seccion" id="cartas">
-	<h2 data-es="Tu ropa es tu mazo" data-en="Your outfit is your deck">Tu ropa es tu mazo</h2>
-	<p class="sub" data-es="Cada clon lleva 4 cartas: las de su cabeza, muñeca, calzado y arma. Toca una carta para ver cómo se juega."
-		data-en="Each clone carries 4 cards: its head, wrist, shoes and weapon. Tap a card to see how it plays.">Cada clon lleva 4 cartas: las de su cabeza, muñeca, calzado y arma. Toca una carta para ver cómo se juega.</p>
-	<div class="inspector">
-		<div class="mazo" id="mazo" role="list"></div>
-		<aside class="detalle" id="detalle" aria-live="polite"></aside>
-	</div>
-</section>
-
-<section class="seccion" id="clonafusion">
-	<div class="columnas invertidas">
-		<figure class="marco"><img src="img/anime/t02_hijo.webp" alt="" loading="lazy"></figure>
-		<div>
-			<h2 data-es="Clonafusión: héroes únicos" data-en="Clonefusion: unique heroes">Clonafusión: héroes únicos</h2>
-			<ol class="pasos">
-				<li><b data-es="Elige dos clones" data-en="Pick two clones">Elige dos clones</b> <span data-es="y mételos en la Clonafusionadora del búnker." data-en="and put them in the bunker's Clonefusioner.">y mételos en la Clonafusionadora del búnker.</span></li>
-				<li><b data-es="Nace un hijo" data-en="A child is born">Nace un hijo</b> <span data-es="con 7 piezas que mezclan las profesiones de sus padres, y con ellas sus cartas." data-en="with 7 pieces mixing its parents' professions, and their cards with them.">con 7 piezas que mezclan las profesiones de sus padres, y con ellas sus cartas.</span></li>
-				<li><b data-es="Rarezas" data-en="Rarities">Rarezas</b> <span data-es="pelo rubio, rojo o violeta y tonos de piel poco comunes que solo salen al fusionar." data-en="blond, red or violet hair and uncommon skin tones that only appear when fusing.">pelo rubio, rojo o violeta y tonos de piel poco comunes que solo salen al fusionar.</span></li>
-				<li><b data-es="Evoluciona" data-en="Evolve">Evoluciona</b> <span data-es="hasta el nivel 70 y elige antes de cada combate la versión de nivel 1 o de nivel 2 de cada carta." data-en="up to level 70 and choose the level 1 or level 2 version of each card before every fight.">hasta el nivel 70 y elige antes de cada combate la versión de nivel 1 o de nivel 2 de cada carta.</span></li>
-			</ol>
+			<a class="boton oro" href="#apuntarse" data-es="Apúntate al playtest" data-en="Join the playtest">Apúntate al playtest</a>
+			<button class="boton fantasma" id="ver-trailer" type="button">
+				<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+				<span data-es="Ver el tráiler" data-en="Watch the trailer">Ver el tráiler</span>
+			</button>
 		</div>
 	</div>
+	<ul class="datos envoltura" aria-label="El juego en cifras">
+		<li><b>36</b><span data-es="profesiones" data-en="professions">profesiones</span></li>
+		<li><b>144</b><span data-es="cartas ilustradas" data-en="illustrated cards">cartas ilustradas</span></li>
+		<li><b>3v3</b><span data-es="Arena en directo" data-en="live Arena">Arena en directo</span></li>
+		<li><b>6</b><span data-es="mundos de historia" data-en="story worlds">mundos de historia</span></li>
+	</ul>
 </section>
 
-<section class="seccion" id="personajes">
-	<h2 data-es="36 profesiones, 6 clases" data-en="36 professions, 6 classes">36 profesiones, 6 clases</h2>
-	<p class="sub" data-es="Defensa gana a Distancia, Distancia a Cuerpo a cuerpo y Cuerpo a cuerpo a Defensa." data-en="Defense beats Ranged, Ranged beats Melee and Melee beats Defense.">Defensa gana a Distancia, Distancia a Cuerpo a cuerpo y Cuerpo a cuerpo a Defensa.</p>
-	<div class="sexo" role="group" aria-label="Chicos o chicas">
-		<button class="activo" data-sexo="chico" aria-pressed="true" data-es="Chicos" data-en="Boys">Chicos</button>
-		<button data-sexo="chica" aria-pressed="false" data-es="Chicas" data-en="Girls">Chicas</button>
+<section class="bloque bloque-trailer" id="trailer">
+	<div class="envoltura">
+		<button class="poster" id="ver-trailer-2" type="button" aria-label="Ver el tráiler">
+			<img src="img/anime/t05_choque.webp" alt="" loading="lazy" width="1280" height="720">
+			<span class="poster-velo"></span>
+			<span class="poster-play"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+			<span class="poster-texto">
+				<span class="antetitulo" data-es="Tráiler oficial" data-en="Official trailer">Tráiler oficial</span>
+				<span class="poster-titulo" data-es="La resistencia empieza en el búnker" data-en="The resistance starts in the bunker">La resistencia empieza en el búnker</span>
+				<span class="poster-dur">0:40</span>
+			</span>
+		</button>
 	</div>
-	<div id="clases" class="clases"></div>
 </section>
 
-<section class="seccion" id="arena">
-	<div class="columnas">
-		<div>
-			<h2 data-es="La Arena: 3 contra 3 en directo" data-en="The Arena: live 3v3">La Arena: 3 contra 3 en directo</h2>
-			<p data-es="Los dos jugadores eligen cartas a la vez y la ronda se resuelve por velocidad, combos, críticos y el último aliento. Si no hay nadie conectado, luchas contra el equipo de otro jugador de tu nivel."
-				data-en="Both players pick cards at the same time and the round plays out by speed, combos, crits and last stand. If nobody is online, you fight another player's team of your level.">Los dos jugadores eligen cartas a la vez y la ronda se resuelve por velocidad, combos, críticos y el último aliento. Si no hay nadie conectado, luchas contra el equipo de otro jugador de tu nivel.</p>
-			<ul class="premios">
-				<li><img src="img/corona.webp" alt=""><span data-es="Copas y ligas: de Bronce a Campeón" data-en="Trophies and leagues: Bronze to Champion">Copas y ligas: de Bronce a Campeón</span></li>
-				<li><img src="img/energia.webp" alt=""><span data-es="Energía para clonafusionar" data-en="Energy to clonefuse">Energía para clonafusionar</span></li>
-				<li><img src="img/plasma.webp" alt=""><span data-es="Plasma de vida, el recurso más escaso" data-en="Life plasma, the rarest resource">Plasma de vida, el recurso más escaso</span></li>
+<section class="bloque" id="juego">
+	<div class="envoltura">
+		<header class="cabecera">
+			<h2 data-es="Tres ideas, un equipo único" data-en="Three ideas, one unique team">Tres ideas, un equipo único</h2>
+		</header>
+
+		<article class="rasgo">
+			<figure class="pantalla"><img src="img/capturas/arena.webp" alt="Combate de la Arena: tres clones contra tres en la Fundición" loading="lazy" width="1600" height="900"></figure>
+			<div class="rasgo-texto">
+				<h3 data-es="Combates 3 contra 3 en directo" data-en="Live 3v3 battles">Combates 3 contra 3 en directo</h3>
+				<p data-es="Los dos jugadores eligen sus cartas a la vez y la ronda se resuelve sola: velocidad, combos, críticos, escudos y el último aliento deciden quién queda en pie."
+					data-en="Both players pick their cards at the same time and the round plays out on its own: speed, combos, critical hits, shields and last stand decide who's left standing.">Los dos jugadores eligen sus cartas a la vez y la ronda se resuelve sola: velocidad, combos, críticos, escudos y el último aliento deciden quién queda en pie.</p>
+				<p data-es="Sube de Bronce a Campeón en el ranking. Si no hay nadie conectado, luchas contra el equipo guardado de otro jugador de tu nivel."
+					data-en="Climb from Bronze to Champion in the ranking. If nobody is online, you fight the saved team of another player your level.">Sube de Bronce a Campeón en el ranking. Si no hay nadie conectado, luchas contra el equipo guardado de otro jugador de tu nivel.</p>
+			</div>
+		</article>
+
+		<article class="rasgo al-reves">
+			<figure class="pantalla"><img src="img/capturas/clonafusionadora.webp" alt="La Clonafusionadora del búnker con los clones disponibles" loading="lazy" width="1600" height="900"></figure>
+			<div class="rasgo-texto">
+				<h3 data-es="La clonafusión" data-en="Clonefusion">La clonafusión</h3>
+				<p data-es="Mete dos clones en la Clonafusionadora del búnker. El hijo hereda piezas de ropa de los dos padres, y con ellas sus cartas: un bombero con la varita de un mago es posible."
+					data-en="Put two clones in the bunker's Clonefuser. The child inherits clothing pieces from both parents, and their cards with them: a firefighter with a magician's wand is possible.">Mete dos clones en la Clonafusionadora del búnker. El hijo hereda piezas de ropa de los dos padres, y con ellas sus cartas: un bombero con la varita de un mago es posible.</p>
+				<p data-es="Algunos hijos salen con pelo o piel poco comunes. Súbelos hasta el nivel 70 y elige antes de cada combate qué versión de cada carta juegas."
+					data-en="Some children come out with rare hair or skin tones. Level them up to 70 and choose before each fight which version of each card you play.">Algunos hijos salen con pelo o piel poco comunes. Súbelos hasta el nivel 70 y elige antes de cada combate qué versión de cada carta juegas.</p>
+			</div>
+		</article>
+
+		<article class="rasgo">
+			<figure class="pantalla"><img src="img/capturas/viaje.webp" alt="El héroe se enfrenta a un robot mantis en las Ruinas" loading="lazy" width="1600" height="900"></figure>
+			<div class="rasgo-texto">
+				<h3 data-es="Un modo historia para empezar" data-en="A story mode to get started">Un modo historia para empezar</h3>
+				<p data-es="Las máquinas se rebelaron, un virus vació la ciudad y llegó una invasión. Desde el búnker, tu héroe tira los dados, cruza el tablero y vence a los jefes de cada mundo."
+					data-en="The machines rebelled, a virus emptied the city and an invasion arrived. From the bunker, your hero rolls the dice, crosses the board and beats each world's bosses.">Las máquinas se rebelaron, un virus vació la ciudad y llegó una invasión. Desde el búnker, tu héroe tira los dados, cruza el tablero y vence a los jefes de cada mundo.</p>
+				<p data-es="Por el camino reúnes los fragmentos de carta de cada profesión: con las cuatro de una, nace su clon."
+					data-en="Along the way you collect each profession's card fragments: with all four, its clone is born.">Por el camino reúnes los fragmentos de carta de cada profesión: con las cuatro de una, nace su clon.</p>
+			</div>
+		</article>
+	</div>
+</section>
+
+<section class="bloque bloque-claro" id="cartas">
+	<div class="envoltura">
+		<header class="cabecera">
+			<h2 data-es="Tu ropa es tu mazo" data-en="Your outfit is your deck">Tu ropa es tu mazo</h2>
+			<p class="sub" data-es="Cada clon juega con 4 cartas: las de su cabeza, muñeca, calzado y arma. Elige una para ver cómo se usa."
+				data-en="Each clone plays with 4 cards: its head, wrist, shoes and weapon. Pick one to see how it plays.">Cada clon juega con 4 cartas: las de su cabeza, muñeca, calzado y arma. Elige una para ver cómo se usa.</p>
+		</header>
+		<div class="inspector">
+			<div class="mazo" id="mazo" role="list"></div>
+			<aside class="detalle" id="detalle" aria-live="polite"></aside>
+		</div>
+	</div>
+</section>
+
+<section class="bloque" id="personajes">
+	<div class="envoltura">
+		<header class="cabecera cabecera-fila">
+			<div>
+				<h2 data-es="36 profesiones, 6 clases" data-en="36 professions, 6 classes">36 profesiones, 6 clases</h2>
+				<p class="sub" data-es="Defensa gana a Distancia, Distancia a Cuerpo a cuerpo y Cuerpo a cuerpo a Defensa. Cada profesión tiene versión chico y chica."
+					data-en="Defense beats Ranged, Ranged beats Melee and Melee beats Defense. Every profession comes as a boy and a girl.">Defensa gana a Distancia, Distancia a Cuerpo a cuerpo y Cuerpo a cuerpo a Defensa. Cada profesión tiene versión chico y chica.</p>
+			</div>
+			<div class="sexo" role="group" aria-label="Chicos o chicas">
+				<button class="activo" data-sexo="chico" aria-pressed="true" data-es="Chicos" data-en="Boys">Chicos</button>
+				<button data-sexo="chica" aria-pressed="false" data-es="Chicas" data-en="Girls">Chicas</button>
+			</div>
+		</header>
+		<div id="clases" class="clases"></div>
+	</div>
+</section>
+
+<section class="bloque bloque-claro" id="mundos">
+	<div class="envoltura">
+		<header class="cabecera">
+			<h2 data-es="Seis mundos que recuperar" data-en="Six worlds to win back">Seis mundos que recuperar</h2>
+		</header>
+		<div class="rejilla-mundos">
+			<article><img class="m-fondo" src="img/mundos/ruinas.webp" alt="" loading="lazy"><div><span class="m-num">I</span><h3 data-es="Ruinas" data-en="Ruins">Ruinas</h3><p data-es="La rebelión de las máquinas" data-en="The machine uprising">La rebelión de las máquinas</p></div></article>
+			<article><img class="m-fondo" src="img/mundos/hospital.webp" alt="" loading="lazy"><div><span class="m-num">II</span><h3 data-es="Hospital" data-en="Hospital">Hospital</h3><p data-es="Los Contaminados" data-en="The Infected">Los Contaminados</p></div></article>
+			<article><img class="m-fondo" src="img/mundos/invasion.webp" alt="" loading="lazy"><div><span class="m-num">III</span><h3 data-es="Zona de invasión" data-en="Invasion zone">Zona de invasión</h3><p data-es="Los Ozari" data-en="The Ozari">Los Ozari</p></div></article>
+			<article><img class="m-fondo" src="img/mundos/estadio.webp" alt="" loading="lazy"><div><span class="m-num">IV</span><h3 data-es="Estadio" data-en="Stadium">Estadio</h3><p data-es="Los androides campeones" data-en="The android champions">Los androides campeones</p></div></article>
+			<article><img class="m-fondo" src="img/mundos/fundicion.webp" alt="" loading="lazy"><div><span class="m-num">V</span><h3 data-es="Fundición" data-en="Foundry">Fundición</h3><p data-es="La fábrica de la IA" data-en="The AI factory">La fábrica de la IA</p></div></article>
+			<article><img class="m-fondo" src="img/mundos/feria.webp" alt="" loading="lazy"><div><span class="m-num">VI</span><h3 data-es="Feria Fantasma" data-en="Ghost Fair">Feria Fantasma</h3><p data-es="Los Duplicados" data-en="The Duplicates">Los Duplicados</p></div></article>
+		</div>
+	</div>
+</section>
+
+<section class="bloque" id="capturas">
+	<div class="envoltura">
+		<header class="cabecera">
+			<h2 data-es="Así se juega" data-en="How it plays">Así se juega</h2>
+		</header>
+	</div>
+	<div class="galeria" tabindex="0" aria-label="Capturas del juego">
+		<figure><img src="img/capturas/base.webp" alt="El búnker: la base de tu héroe" loading="lazy" width="1600" height="900"><figcaption data-es="El búnker, tu base" data-en="The bunker, your base">El búnker, tu base</figcaption></figure>
+		<figure><img src="img/capturas/arena.webp" alt="Combate 3 contra 3 en la Arena" loading="lazy" width="1600" height="900"><figcaption data-es="Arena 3 contra 3" data-en="3v3 Arena">Arena 3 contra 3</figcaption></figure>
+		<figure><img src="img/capturas/coleccion.webp" alt="La colección de cartas por profesiones" loading="lazy" width="1600" height="900"><figcaption data-es="Colección de cartas" data-en="Card collection">Colección de cartas</figcaption></figure>
+		<figure><img src="img/capturas/clonafusionadora.webp" alt="La Clonafusionadora" loading="lazy" width="1600" height="900"><figcaption data-es="La Clonafusionadora" data-en="The Clonefuser">La Clonafusionadora</figcaption></figure>
+		<figure><img src="img/capturas/habilidades.webp" alt="Elección de habilidades al empezar un viaje" loading="lazy" width="1600" height="900"><figcaption data-es="Habilidades del viaje" data-en="Journey skills">Habilidades del viaje</figcaption></figure>
+		<figure><img src="img/capturas/viaje.webp" alt="Combate del modo historia contra un robot" loading="lazy" width="1600" height="900"><figcaption data-es="Modo historia" data-en="Story mode">Modo historia</figcaption></figure>
+	</div>
+</section>
+
+<section class="bloque bloque-claro" id="ruta">
+	<div class="envoltura">
+		<header class="cabecera">
+			<h2 data-es="Dónde estamos" data-en="Where we are">Dónde estamos</h2>
+			<p class="sub" data-es="Clonafusión se está haciendo con sus testers: lo que nos contáis cambia el equilibrio de las cartas y lo siguiente que construimos."
+				data-en="Clonafusión is being built with its testers: what you tell us changes card balance and what we build next.">Clonafusión se está haciendo con sus testers: lo que nos contáis cambia el equilibrio de las cartas y lo siguiente que construimos.</p>
+		</header>
+		<ol class="ruta" id="lista-ruta"></ol>
+	</div>
+</section>
+
+<section class="bloque bloque-foto" id="apuntarse">
+	<div class="envoltura apuntarse">
+		<div class="apuntarse-texto">
+			<p class="antetitulo" data-es="Playtest cerrado" data-en="Closed playtest">Playtest cerrado</p>
+			<h2 data-es="Juega antes que nadie" data-en="Play before anyone else">Juega antes que nadie</h2>
+			<p data-es="Déjanos el correo de tu cuenta de Google Play y te enviaremos la invitación para instalar la versión de prueba. Es gratis." data-en="Leave the email of your Google Play account and we'll send you the invite to install the test version. It's free.">Déjanos el correo de tu cuenta de Google Play y te enviaremos la invitación para instalar la versión de prueba. Es gratis.</p>
+			<ul class="lista-check">
+				<li data-es="Android 7 o más reciente" data-en="Android 7 or newer">Android 7 o más reciente</li>
+				<li data-es="Sin NFT ni criptomonedas" data-en="No NFTs, no crypto">Sin NFT ni criptomonedas</li>
+				<li data-es="Tu opinión llega directa al equipo" data-en="Your feedback goes straight to the team">Tu opinión llega directa al equipo</li>
 			</ul>
 		</div>
-		<figure class="marco"><img src="img/anime/t04_cara.webp" alt="" loading="lazy"></figure>
-	</div>
-</section>
+		<div class="tarjeta-form">
+			<form id="form" novalidate>
+				<label for="f-correo" data-es="Correo de tu cuenta de Google Play" data-en="Your Google Play account email">Correo de tu cuenta de Google Play</label>
+				<input id="f-correo" name="correo" type="email" autocomplete="email" required placeholder="tu@gmail.com">
+				<p class="error" id="e-correo" hidden data-es="Escribe un correo válido." data-en="Enter a valid email.">Escribe un correo válido.</p>
 
-<section class="seccion" id="mundos">
-	<h2 data-es="Modo historia: 6 mundos" data-en="Story mode: 6 worlds">Modo historia: 6 mundos</h2>
-	<p class="sub" data-es="Las máquinas, un virus y una invasión acabaron con la ciudad. Desde el búnker, tira el dado, cruza el tablero y vence a sus jefes para conseguir tus primeros clones."
-		data-en="Machines, a virus and an invasion wiped out the city. From the bunker, roll the dice, cross the board and beat its bosses to earn your first clones.">Las máquinas, un virus y una invasión acabaron con la ciudad. Desde el búnker, tira el dado, cruza el tablero y vence a sus jefes para conseguir tus primeros clones.</p>
-	<div class="rejilla-mundos">
-		<article style="--fondo:url(img/mundos/ruinas.webp)"><img src="img/mundos/emblema_ruinas.webp" alt=""><h3 data-es="Ruinas" data-en="Ruins">Ruinas</h3><p data-es="La rebelión de las máquinas" data-en="The machine uprising">La rebelión de las máquinas</p></article>
-		<article style="--fondo:url(img/mundos/hospital.webp)"><img src="img/mundos/emblema_hospital.webp" alt=""><h3 data-es="Hospital" data-en="Hospital">Hospital</h3><p data-es="Los Contaminados" data-en="The Contaminated">Los Contaminados</p></article>
-		<article style="--fondo:url(img/mundos/invasion.webp)"><img src="img/mundos/emblema_invasion.webp" alt=""><h3 data-es="Zona de invasión" data-en="Invasion zone">Zona de invasión</h3><p data-es="Los Ozari" data-en="The Ozari">Los Ozari</p></article>
-		<article style="--fondo:url(img/mundos/estadio.webp)"><img src="img/mundos/emblema_estadio.webp" alt=""><h3 data-es="Estadio" data-en="Stadium">Estadio</h3><p data-es="Los androides campeones" data-en="The champion androids">Los androides campeones</p></article>
-		<article style="--fondo:url(img/mundos/fundicion.webp)"><img src="img/mundos/emblema_fundicion.webp" alt=""><h3 data-es="Fundición" data-en="Foundry">Fundición</h3><p data-es="La fábrica de la IA" data-en="The AI factory">La fábrica de la IA</p></article>
-		<article style="--fondo:url(img/mundos/feria.webp)"><img src="img/mundos/emblema_feria.webp" alt=""><h3 data-es="Feria Fantasma" data-en="Ghost Fair">Feria Fantasma</h3><p data-es="Los Duplicados" data-en="The Duplicates">Los Duplicados</p></article>
-	</div>
-</section>
+				<label for="f-movil" data-es="Tu móvil Android" data-en="Your Android phone">Tu móvil Android</label>
+				<input id="f-movil" name="movil" type="text" autocomplete="off" required placeholder="Samsung A54, Xiaomi Redmi Note 12…">
+				<p class="error" id="e-movil" hidden data-es="Dinos qué móvil tienes." data-en="Tell us which phone you have.">Dinos qué móvil tienes.</p>
 
-<section class="seccion" id="porque">
-	<h2 data-es="Por qué probarlo ahora" data-en="Why play it now">Por qué probarlo ahora</h2>
-	<p class="sub" data-es="Esta versión ya es el juego entero. Lo que nos digas cambia el equilibrio de las cartas y lo que hagamos después."
-		data-en="This build is already the full game. What you tell us changes card balance and what we build next.">Esta versión ya es el juego entero. Lo que nos digas cambia el equilibrio de las cartas y lo que hagamos después.</p>
-	<div class="cifras" id="cifras"></div>
-</section>
+				<fieldset>
+					<legend data-es="¿Juegas a juegos de cartas?" data-en="Do you play card games?">¿Juegas a juegos de cartas?</legend>
+					<div class="opciones">
+						<label><input type="radio" name="experiencia" value="Nunca" checked><span data-es="Nunca" data-en="Never">Nunca</span></label>
+						<label><input type="radio" name="experiencia" value="A veces"><span data-es="A veces" data-en="Sometimes">A veces</span></label>
+						<label><input type="radio" name="experiencia" value="Mucho"><span data-es="Mucho" data-en="A lot">Mucho</span></label>
+					</div>
+				</fieldset>
 
-<section class="seccion" id="ruta">
-	<h2 data-es="Hoja de ruta" data-en="Roadmap">Hoja de ruta</h2>
-	<ol class="ruta" id="lista-ruta"></ol>
-</section>
+				<label for="f-pais" data-es="País" data-en="Country">País</label>
+				<input id="f-pais" name="pais" type="text" autocomplete="country-name" placeholder="España, Venezuela, México…">
 
-<section class="seccion" id="apuntarse">
-	<div class="tarjeta-form">
-		<div class="form-texto">
-			<h2 data-es="Solicita acceso al playtest" data-en="Request playtest access">Solicita acceso al playtest</h2>
-			<p data-es="Te enviaremos la invitación de Google Play al correo que pongas. Son 30 segundos." data-en="We'll send the Google Play invite to the email you enter. It takes 30 seconds.">Te enviaremos la invitación de Google Play al correo que pongas. Son 30 segundos.</p>
-			<img src="img/anime/t13_final.webp" alt="" loading="lazy">
-		</div>
-		<form id="form" novalidate>
-			<label for="f-correo" data-es="Correo de tu cuenta de Google Play" data-en="Your Google Play account email">Correo de tu cuenta de Google Play</label>
-			<input id="f-correo" name="correo" type="email" autocomplete="email" required placeholder="tu@gmail.com">
-			<p class="error" id="e-correo" hidden data-es="Escribe un correo válido." data-en="Enter a valid email.">Escribe un correo válido.</p>
+				<label class="casilla"><input type="checkbox" name="novedades" id="f-novedades" checked><span data-es="Quiero recibir novedades del juego (puedo darme de baja cuando quiera)." data-en="I want to receive game news (I can unsubscribe anytime).">Quiero recibir novedades del juego (puedo darme de baja cuando quiera).</span></label>
 
-			<label for="f-movil" data-es="Tu móvil Android" data-en="Your Android phone">Tu móvil Android</label>
-			<input id="f-movil" name="movil" type="text" autocomplete="off" required placeholder="Samsung A54, Xiaomi Redmi Note 12…">
-			<p class="error" id="e-movil" hidden data-es="Dinos qué móvil tienes." data-en="Tell us which phone you have.">Dinos qué móvil tienes.</p>
-
-			<fieldset>
-				<legend data-es="¿Juegas a juegos de cartas?" data-en="Do you play card games?">¿Juegas a juegos de cartas?</legend>
-				<div class="opciones">
-					<label><input type="radio" name="experiencia" value="Nunca" checked><span data-es="Nunca" data-en="Never">Nunca</span></label>
-					<label><input type="radio" name="experiencia" value="A veces"><span data-es="A veces" data-en="Sometimes">A veces</span></label>
-					<label><input type="radio" name="experiencia" value="Mucho"><span data-es="Mucho" data-en="A lot">Mucho</span></label>
-				</div>
-			</fieldset>
-
-			<label for="f-pais" data-es="País" data-en="Country">País</label>
-			<input id="f-pais" name="pais" type="text" autocomplete="country-name" placeholder="España, Venezuela, México…">
-
-			<label class="casilla"><input type="checkbox" name="novedades" id="f-novedades" checked><span data-es="Quiero recibir novedades del juego (puedo darme de baja cuando quiera)." data-en="I want to receive game news (I can unsubscribe anytime).">Quiero recibir novedades del juego (puedo darme de baja cuando quiera).</span></label>
-
-			<button class="boton oro enviar" type="submit" id="enviar"><span data-es="Solicitar acceso" data-en="Request access">Solicitar acceso</span></button>
-			<p class="aviso-form" id="aviso-form" hidden></p>
-		</form>
-		<div class="hecho" id="hecho" hidden>
-			<img src="img/capsula.webp" alt="">
-			<h3 data-es="¡Estás dentro de la lista!" data-en="You're on the list!">¡Estás dentro de la lista!</h3>
-			<p data-es="Cuando abramos la siguiente tanda te llegará la invitación de Google Play. Mientras, pásate por el Discord." data-en="When we open the next batch you'll get the Google Play invite. Meanwhile, drop by the Discord.">Cuando abramos la siguiente tanda te llegará la invitación de Google Play. Mientras, pásate por el Discord.</p>
-			<a class="boton discord" data-enlace="discord" href="#" target="_blank" rel="noopener" data-es="Unirse a Discord" data-en="Join Discord">Unirse a Discord</a>
+				<button class="boton oro enviar" type="submit" id="enviar"><span data-es="Solicitar acceso" data-en="Request access">Solicitar acceso</span></button>
+				<p class="aviso-form" id="aviso-form" hidden></p>
+				<p class="letra-pequena"><span data-es="Usamos tu correo solo para el playtest y las novedades del juego." data-en="We only use your email for the playtest and game news.">Usamos tu correo solo para el playtest y las novedades del juego.</span> <a href="privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a></p>
+			</form>
+			<div class="hecho" id="hecho" hidden>
+				<img src="img/capsula.webp" alt="" width="96" height="96">
+				<h3 data-es="Estás en la lista" data-en="You're on the list">Estás en la lista</h3>
+				<p data-es="Cuando abramos la siguiente tanda te llegará la invitación de Google Play. Mientras, pásate por el Discord." data-en="When we open the next batch you'll get the Google Play invite. Meanwhile, drop by the Discord.">Cuando abramos la siguiente tanda te llegará la invitación de Google Play. Mientras, pásate por el Discord.</p>
+				<a class="boton fantasma" data-enlace="discord" href="#" target="_blank" rel="noopener" data-es="Unirse a Discord" data-en="Join Discord">Unirse a Discord</a>
+			</div>
 		</div>
 	</div>
 </section>
 
-<section class="seccion" id="faq">
-	<h2 data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</h2>
-	<div class="faq" id="lista-faq"></div>
+<section class="bloque" id="faq">
+	<div class="envoltura faq-rejilla">
+		<header class="cabecera">
+			<h2 data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</h2>
+			<p class="sub"><span data-es="¿Algo más? Escríbenos a" data-en="Anything else? Write to">¿Algo más? Escríbenos a</span> <a data-enlace="contacto" href="#">contacto@clonafusion.com</a></p>
+		</header>
+		<div class="faq" id="lista-faq"></div>
+	</div>
 </section>
 </main>
 
 <footer class="pie">
-	<nav class="pie-enlaces">
-		<a data-enlace="discord" href="https://discord.gg/GAE96e7tmc" target="_blank" rel="noopener">Discord</a>
-		<a data-enlace="youtube" href="https://www.youtube.com/@Clonafusi%C3%B3n" target="_blank" rel="noopener">YouTube</a>
-		<a href="#apuntarse" data-es="Playtest" data-en="Playtest">Playtest</a>
-		<a data-enlace="contacto" href="#" data-es="Contacto y prensa" data-en="Contact and press">Contacto y prensa</a>
-		<a href="privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
-	</nav>
-	<p>© 2026 TOCOLEX Studio Games. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+	<div class="envoltura pie-rejilla">
+		<div class="pie-marca">
+			<a class="marca" href="#inicio"><img src="img/caras/heroe.webp" alt="" width="34" height="34"><span>Clonafusión</span></a>
+			<p data-es="Juego de cartas 3 contra 3 para Android, hecho en España por TOCOLEX Studio Games." data-en="A 3v3 card game for Android, made in Spain by TOCOLEX Studio Games.">Juego de cartas 3 contra 3 para Android, hecho en España por TOCOLEX Studio Games.</p>
+		</div>
+		<nav aria-label="Juego">
+			<h4 data-es="Juego" data-en="Game">Juego</h4>
+			<a href="#juego" data-es="El juego" data-en="The game">El juego</a>
+			<a href="#cartas" data-es="Cartas" data-en="Cards">Cartas</a>
+			<a href="#personajes" data-es="Personajes" data-en="Heroes">Personajes</a>
+			<a href="#apuntarse" data-es="Playtest" data-en="Playtest">Playtest</a>
+		</nav>
+		<nav aria-label="Comunidad">
+			<h4 data-es="Comunidad" data-en="Community">Comunidad</h4>
+			<a data-enlace="discord" href="https://discord.gg/GAE96e7tmc" target="_blank" rel="noopener">Discord</a>
+			<a data-enlace="youtube" href="https://www.youtube.com/@Clonafusi%C3%B3n" target="_blank" rel="noopener">YouTube</a>
+			<a href="prensa.html" data-es="Prensa" data-en="Press kit">Prensa</a>
+			<a data-enlace="contacto" href="#" data-es="Contacto" data-en="Contact">Contacto</a>
+		</nav>
+		<nav aria-label="Legal">
+			<h4 data-es="Legal" data-en="Legal">Legal</h4>
+			<a href="privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+			<a href="borrar-datos.html" data-es="Borrar mis datos" data-en="Delete my data">Borrar mis datos</a>
+		</nav>
+	</div>
+	<div class="envoltura pie-final">
+		<p>© 2026 TOCOLEX Studio Games. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+		<p data-es="Android es una marca de Google LLC." data-en="Android is a trademark of Google LLC.">Android es una marca de Google LLC.</p>
+	</div>
 </footer>
 
 <div class="modal" id="modal" hidden>
-	<button class="cerrar" id="cerrar" aria-label="Cerrar">✕</button>
+	<button class="cerrar" id="cerrar" aria-label="Cerrar">
+		<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+	</button>
 	<video id="video-trailer" controls playsinline preload="none" poster="img/portada.jpg"></video>
 </div>
 
 <script src="datos.js"></script>
-<script src="web.js"></script>
+<script src="web.js?v=2"></script>
 </body>
 </html>
